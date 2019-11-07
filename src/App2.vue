@@ -91,11 +91,13 @@ export default {
       var time = new Date(data);
       var n = time.getFullYear();
       var y = time.getMonth() + 1;
-      var r = time.getDate();
+      y = y.toString().padStart(2,0);
+      var r = time.getDate().toString().padStart(2,0);
 
-      var s = time.getHours();
-      var f = time.getMinutes();
-      var m = time.getSeconds();
+      var s = time.getHours().toString().padStart(2,0);
+      var f = time.getMinutes().toString().padStart(2,0);
+      var m = time.getSeconds().toString().padStart(2,0);
+      console.log(typeof y);
       return `${n}-${y}-${r} ${s}:${f}:${m}`;
     }
   }
